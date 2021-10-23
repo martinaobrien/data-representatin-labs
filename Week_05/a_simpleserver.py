@@ -1,5 +1,5 @@
 #!flask/bin/python
-from flask import flask
+from flask import Flask
 
 app = Flask(__name__,
             static_url_path='',
@@ -9,5 +9,5 @@ app = Flask(__name__,
 def index():
     return "Hello, World!"
 
-if __name__ == '__name__':
-    app.run(debug=Tru)
+if __name__ == '__main__':
+    app.run(debug=True)
