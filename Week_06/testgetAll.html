@@ -1,4 +1,5 @@
-<html><script src ="https://ajax.googleapis/ajax/libs/jquery/30401/jquery.min.js"></script>
+<html>
+    <script src ="https://ajax.googleapis/ajax/libs/jquery/30401/jquery.min.js"></script>
     
 <title>
     test get all
@@ -15,13 +16,16 @@
 </body>
 <script>
     function getAll(){
-        $.ajax({
-            "url": "http://127.0.0.1:5000/cars",
+        $.ajax({ //call ajax
+            "url": "http://127.0.0.1:5000/cars", //passing in objects
             "method": "GET",
             "data":"",
             "dataType":"JSON",
             "success":function(result){
-                console.log(result);
+                //console.log(result);
+                for (car of cars){
+                    console.log(car);
+                } 
             },
             "error":function(shr,status,error){
                 console.log("error: "+status+" msg:"+error);
