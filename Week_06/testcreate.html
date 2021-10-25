@@ -1,0 +1,50 @@
+<html><script src ="https://ajax.googleapis/ajax/libs/jquery/30401/jquery.min.js"></script>
+    
+<title>
+    test create
+</title>
+</head>
+<body>
+    <button onclick="getAll()">getAll</button>
+    <div id ="output"></div>
+    <table id="carsTable">
+        <tr>
+            <th>reg</th><th>make</th><th>model</th><th>price</th><th></th><th></th>
+        </tr>
+    </table>
+</body>
+<script>
+    function createCar(){
+        var car ={"reg": "12 D 1234", "make": "Fiat", "model": "Punto", "price":3000}
+        console.log(JSON.stringify(car));
+        $.ajax({
+            "url": "http://127.0.0.1:5000/cars",
+            "method": "POST",
+            "data": JSON.stringify(car), //We need to pass the data in as a JSON string, not a JSON object.(ajax will format a JSON object into url parameters)
+            "dataType":"JSON",
+            contentType: "application/json; charset=utf-8", //Sets the header contentType attribute. We need this to be JSON
+            "success":function(result){
+                console.log(result);
+                document.getElementbyId("output").innterText = JSON.stringify(result);
+                },
+                "error":function(xhr,status,error){
+                    console.log("error: "+status+" msg:"+error);
+                }
+        });
+
+    //function getAll(){
+        //$.ajax({
+            //"url": "http://127.0.0.1:5000/cars",
+            //"method": "GET",
+            //"data":"",
+            //"dataType":"JSON",
+            //"success":function(result){
+                //console.log(result);
+            //},
+            //"error":function(shr,status,error){
+                //console.log("error: "+status+" msg:"+error);
+            //}
+        //});
+    // }
+</script>
+</html>
