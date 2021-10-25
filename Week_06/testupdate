@@ -1,0 +1,37 @@
+<html><script src ="https://ajax.googleapis/ajax/libs/jquery/30401/jquery.min.js"></script>
+    
+<title>
+    test create
+</title>
+</head>
+<body>
+    <button onclick="getAll()">getAll</button>
+    <div id ="output"></div>
+    <table id="carsTable">
+        <tr>
+            <th>reg</th><th>make</th><th>model</th><th>price</th><th></th><th></th>
+        </tr>
+    </table>
+</body>
+<script>
+        function updateCar(){
+            var car = {"reg": "181 G 1234", "make": "Ford", "model": "Mondeo", "price": "00"}
+            console.log(JSON.stringify(car));
+            $.ajax({
+                "url": "http://127.0.0.1:5000/cars"+encodeURL(car,reg),//This is put into the URL so it needs to be encoded(spaces converted to %20 etc)
+                "method":"PUT",
+                "data":JSON.stringify(car),
+                "dataType":"JSON",
+                contentType: "application/json; charset=uft-8",
+                "success":function(result){
+                    console.log(result);
+                    document.getElementById("output").innerText = JSON.stringify(result);
+                },
+                "error": function(xhr,status,error){
+                    console.log("error:"+status+" msg:"+error);
+                }
+
+            });
+        }
+    </script>
+</html>
