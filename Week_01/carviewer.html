@@ -1,0 +1,70 @@
+<html>
+ <head>
+ <title>View cars</title>
+ <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+ 
+ </head>
+ <body>
+    <h1>Cars</h1></body></b>
+
+    <div>
+        <button>Create</button>
+    </div> </br>
+    
+    <div> <!-- areas that we can find on our webpage, we will ad ids to them later on-->
+    </div>
+        <table class='table'>
+            <tr>
+                <th>Reg</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+
+            <tr>
+                <td>191 M0 123</td>
+                <td>Ford</td>
+                <td>Mondeo</td>
+                <td>25,000</td>
+                <td><button>Update</button></td>
+                <td><button>Delete</button></td>
+           </tr>
+               
+           <tr>
+                <td>12 D 123</td>
+                <td>Fiat</td>
+                <td>Punto</td>
+                <td>4,000</td>
+                <td><button>Update</button></td>
+                <td><button>Delete</button></td>
+            </tr>
+
+            <tr>
+                <td>08 G 123</td>
+                <td>Nissan</td>
+                <td>Almera</td>
+                <td>500</td>
+                <td><button>Update</button></td>
+                <td><button>Delete</button></td>
+            </tr>
+        </table></br>
+
+    <div>
+        <h2><span>Create a</span> <span>Update</span> <span>Car</span> </h2>
+        Reg <input type="text" name="reg"/><br/> <!--all tags need a closing tag-->
+        Make <select name="make">
+        <option value="Ford">Ford</option>
+        <option value="Fiat">Fiat</option>
+        <option value="Nissan">Nissan</option>
+        </select><br/>
+        Model <input type="text" name="model"/><br/>
+        Price <input type="number" name="price"/><br/>
+    </br>
+        <span><button>Create</button></span><!--using span as only one of the buttons will be used-->
+        <span><button>Update</button></span>
+    </div>
+ </body>
+</html>
