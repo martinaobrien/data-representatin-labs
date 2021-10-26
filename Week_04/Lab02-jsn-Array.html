@@ -1,0 +1,20 @@
+<html>
+   <head>
+       Lab 02
+   </head> 
+   <body>
+       <script>
+           var jsonString = '{"employees": [{"firstname":"John", "lastName": "Doe" },{"firstname":"Anna", "lastName": "Smith" },{"firstname":"Peter", "lastName": "Jones" }]}'
+           var obj = JSON.parse(jsonString);
+           var employees = obj.employees;
+            //for (employee of employees){
+                //console.log(employee.firstName); // gets each of the objects in the JSON string
+            //}
+
+        //instead of doing a for loop
+            employees.array.forEach(each =>{
+               console.log(employee.lastName); 
+            })
+       </script>
+   </body>
+</html>
